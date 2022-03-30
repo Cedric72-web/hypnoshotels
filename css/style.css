@@ -6,13 +6,18 @@
     margin: 0;
 }
 
+
+/* R E S P O N S I V E - M O B I L E F I R S T */
+
 header{
     width: 100%;
     height: 60px;
     background-color: #da38a0;
 }
 
-/* R E S P O N S I V E - M O B I L E F I R S T */
+header{
+    position: fixed;
+}
 
 h1{
     line-height: 60px;
@@ -20,6 +25,13 @@ h1{
     font-family: 'Yeseva One';
     color: #fff;
     font-size: 1.3rem;
+}
+
+h2{
+    margin: 10px auto;
+    text-transform: uppercase;
+    font-family: 'Montserrat Alternates';
+    text-align: center;
 }
 
 a{
@@ -36,11 +48,6 @@ a{
     top: 10px;
     left: 10px;
     z-index: 10;
-}
-
-.btn-rond-menu:hover{
-    width: 80px;
-    height: 80px;
 }
 
 .cont-ligne{
@@ -100,11 +107,85 @@ a{
     background: transparent;
 }
 
+#accueil{
+    width: 100vw;
+    padding-top: 80px;
+}
+
+#accueil img{
+    width: 80vw;
+    border-radius: 5px;
+}
+
+.image-accueil{
+    display: flex;
+    justify-content: center;
+}
+
+.description{
+    margin: 10px;
+    border-radius: 10px;
+    font-family: 'Montserrat Alternates';
+    font-weight: bold;
+    background-color: purple;
+    padding: 20px;
+    text-align: center;
+    color: #1c1f2a;
+}
+
+#hotels{
+    width: 100vw;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.image-hotel{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+img{
+    padding: 5px;
+    border-radius: 20px;
+    width: 80vw;
+}
+
+.localisation{
+    padding: 0 15px;
+    z-index: 0;
+    font-family: 'Yeseva One';
+    text-transform: uppercase;
+    color: #1c1f2a;
+    font-size: 1.1rem;
+    position: absolute;
+    background-color: #b63a8b;
+    border-radius: 5px;
+}
+
 /* R E S P O N S I V E - T A B L E T T E */
 
 @media screen and (min-width: 500px){
     h1{
         font-size: 2rem;
+    }
+
+    .description{
+        width: 90vw;
+    }
+
+    img{
+        width: 45vw;
+    }
+
+    #accueil .description{
+        width: 95vw;
+        margin: auto;
+        text-align: center;
     }
 }
 
@@ -115,17 +196,26 @@ a{
         display: none;
     }
 
+
     .navbar{
-        background-color: #da38a0;
-        width: 100%;
+        width: 100vw;
         height: 60px;
+        background-color: #da38a0;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        position: absolute;
     }
-
-    .navbar a{
+    
+    .bloc-menu{
+        width: 100%;
+    }
+    
+    .bloc-menu span{
+        text-align: center;
+        position: relative;
+    }
+    
+    .navbar span a{
         color: #fff;
         justify-content: space-around;
         text-decoration: none;
@@ -134,21 +224,37 @@ a{
         font-family: 'Montserrat Alternates';
     }
 
-    .navbar a:hover{
+    .navbar span a:hover{
         color: #77c593;
     }
 
-    .navbar a::after{
+    .bloc-menu span::after{
         content: '';
         display: block;
-        width: 0px;
+        width: 0;
         margin: 5px auto 0 auto;
         height: 2px;
         border-radius: 2px;
-        color: #77c593;
+        color: black;
         transition: all 0.2s ease-out;
     }
-    .navbar a:hover::after{
+
+    .navbar span a:hover::after{
         width: 100%;
+    }
+
+    #accueil{
+        padding-top: 150px;
+        width: 100vw;
+    }
+
+    #accueil .description{
+        width: 95vw;
+        margin: auto;
+        text-align: center;
+    }
+
+    img{
+        width: 30vw;
     }
 }
