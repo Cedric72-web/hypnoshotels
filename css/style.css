@@ -224,6 +224,25 @@ h2{
 
 /* **************** Section Contact **************** */
 
+/* **************** Footer **************** */
+
+.footer{
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat Alternates';
+    background: linear-gradient(45deg, rgba(205,61,182,1) 0%, rgba(233,87,226,1) 35%, rgba(225,102,231,1) 100%);
+    color: #1c1f2a;
+    font-weight: bold;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #1c1f2a;
+}
+
 /* R E S P O N S I V E - T A B L E T T E */
 
 @media screen and (min-width: 500px){
