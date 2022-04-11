@@ -9,5 +9,5 @@ const ligne = document.querySelector('.cont-ligne');
 btnMenu.addEventListener('click', () => {
     
     ligne.classList.toggle('active');
-
+    nav.classList.toggle('visible')
 });

@@ -9,6 +9,8 @@
 
 /* R E S P O N S I V E - M O B I L E F I R S T */
 
+/* **************** Général **************** */
+
 header{
     width: 100%;
     height: 60px;
@@ -33,9 +35,7 @@ h2{
     text-align: center;
 }
 
-a{
-    color: transparent;
-}
+/* **************** Bouton rond menu **************** */
 
 .btn-rond-menu{
     width: 70px;
@@ -106,13 +106,50 @@ a{
     background: transparent;
 }
 
+.navbar{
+    display: none;
+}
+
+.navbar.visible{
+    position: absolute;
+    width: 55vw;
+    height: 35vh;
+    background-color: #da38a0;
+    color: #f1f1f1;
+    border-radius: 0 0 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.navbar.visible .blocs-menu{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+}
+
+.navbar.visible .span{
+    color: #f1f1f1;
+}
+
+.navbar.visible a{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    text-decoration: none;
+}
+/* **************** Section Accueil **************** */
+
 #accueil{
     width: 100vw;
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 #accueil img{
-    width: 80vw;
+    margin-top: 10px;
+    width: 90%;
     border-radius: 5px;
 }
 
@@ -126,11 +163,13 @@ a{
     border-radius: 10px;
     font-family: 'Montserrat Alternates';
     font-weight: bold;
-    background-color: purple;
+    background-image: linear-gradient(to right, #ec48ca, #dc45bc, #cc42ae, #bc3ea0, #ac3b93);
     padding: 20px;
     text-align: center;
     color: #1c1f2a;
 }
+
+/* **************** Section Hotels **************** */
 
 #hotels{
     width: 100vw;
@@ -140,6 +179,13 @@ a{
     justify-content: space-around;
 }
 
+.image-hotel-card{
+    box-shadow: 2px 2px 4px 1px #da38a0;
+    border: 1px solid #333;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
 .image-hotel{
     width: 100%;
     display: flex;
@@ -147,14 +193,17 @@ a{
     position: absolute;
 }
 
-img{
-    padding: 5px;
-    border-radius: 20px;
-    width: 80vw;
+.image-hotel-card img{
+    height: auto;
+    border-radius: 0 0 20px 20px;
+    width: 90vw;
+    margin-top: 10px;
+    margin-bottom: -15px;
 }
 
 .localisation{
     align-items: center;
+    margin-bottom: 15px;
     display: block;
     text-align: center;
     padding: 0 15px;
@@ -164,12 +213,16 @@ img{
     color: #1c1f2a;
     font-size: 1.1rem;
     background-color: #b63a8b;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .localisation p{
     align-items: center;
 }
+
+/* **************** Section Services **************** */
+
+/* **************** Section Contact **************** */
 
 /* R E S P O N S I V E - T A B L E T T E */
 
@@ -180,13 +233,22 @@ img{
 
     .description{
         width: 90vw;
+        margin-top: 50px;
     }
 
-    img{
-        width: 45vw;
+    .image-accueil{
+        width: 95vw;
+        height: auto;
+    }
+
+    .image-accueil img{
+        width: 95%;
+        height: auto;
+        margin-bottom: 15px;
     }
 
     #accueil .description{
+        position: static;
         width: 95vw;
         margin: auto;
         text-align: center;
