@@ -14,12 +14,11 @@ try{
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connexion réussie";
-    $addUser = "INSERT INTO users (nom, mail, pass) 
+    $addUser = "INSERT INTO users (Nom, Mail, Pass) 
                     VALUES ('$firstname',($email),($password)";
         $conn->exec($addUser);
         echo('Utilisateur inséré dans la base de données');
 }
-
     catch(PDOException $e){
         echo "Erreur : " . $e->getMessage();
     }
