@@ -15,7 +15,7 @@ try{
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connexion réussie";
     $addUser = "INSERT INTO users (Nom, Mail, Pass) 
-                VALUES ('$firstname',($email),($pass)";
+                VALUES ('$firstname', ($pass)";
         $conn->exec($addUser);
         echo('Utilisateur inséré dans la base de données');
 }
