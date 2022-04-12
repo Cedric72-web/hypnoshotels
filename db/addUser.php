@@ -12,13 +12,13 @@ if(!empty($_POST)){
         require_once './connect.php';
     
         $addUser = "INSERT INTO users (Nom, Mail, Pass) 
-                    VALUES ('test', 'test@test.fr', 'test')";
+                    VALUES (:name, :mail, :pass)";
 
         $requete = $conn->prepare($addUser);
 
-        // $requete->bindValue(":Name", $firstname);
-        // $requete->bindValue(":Mail", $email);
-        // $requete->bindValue(":Pass", $pass);
+        $requete->bindValue(":name", $firstname);
+        $requete->bindValue(":mail", $email);
+        $requete->bindValue(":pass", $pass);
 
         if(!$requete->execute()){
             die("Une erreur est survenue");
