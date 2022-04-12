@@ -15,7 +15,7 @@
         <input id="mail" name="mail" type="text">
         <label for="password" class="sign-in-form-label">Mot de passe :</label>
         <input id="password" name="password" type="text">
-        <button name="submit" type="submit" >S'inscrire</button>
+        <button type="submit" >S'inscrire</button>
     </form>
 </body>
 </html>

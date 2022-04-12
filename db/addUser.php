@@ -1,25 +1,47 @@
 <?php
 
-if (isset ($_POST['submit'])) {
-    $firstname = $_POST['firstname'];
-    $email = $_POST['mail'];
-    $pass = $_POST['password'];
+if(!empty($_POST)){
+    if(
+        isset($_POST['firstname'], $_POST['mail'], $_POST['password'])
+        && !empty($_POST['firstname']) && !empty($_POST['mail']) && !empty($_POST['password'])
+    ){
+        $firstname = $_POST['firstname'];
+        $email = $_POST['mail'];
+        $pass = $_POST['password'];
 
-    $host = "j8oay8teq9xaycnm.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-    $username = "xapu4xf76j1hpitc";
-    $password = "hy63piq8eofy012c";
-    $dbname = "pitfv5r4s2129e4r";
+        require_once './connect.php';
+    
+        $addUser = "INSERT INTO `users` (`Nom`, `Mail` `Pass`) 
+                    VALUES (:Nom, :Mail, :Pass)";
 
-try{
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connexion réussie";
-    $addUser = "INSERT INTO users (Nom, Pass) 
-                VALUES ('$firstname', ($pass)";
-        $conn->exec($addUser);
-        echo('Utilisateur inséré dans la base de données');
-}
-    catch(PDOException $e){
-        echo "Erreur : " . $e->getMessage();
+        $requete = $conn->prepare($addUser);
+
+        $requete->bindValue(":Name", $firstname);
+        $requete->bindValue(":Mail", $email);
+        $requete->bindValue(":Pass", $pass);
+
+        if(!$requete->execute()){
+            die("Une erreur est survenue");
+        }
+
+    } else {
+        die("Le formulaire n'est pas complet");
     }
-};
+}
+
+
+// $host = "j8oay8teq9xaycnm.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+// $username = "xapu4xf76j1hpitc";
+// $password = "hy63piq8eofy012c";
+// $dbname = "pitfv5r4s2129e4r";
+
+// try{
+//     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//     echo "Connexion réussie";
+//     $conn->exec($addUser);
+//     echo('Utilisateur inséré dans la base de données');
+// }
+// catch(PDOException $e){
+//     echo "Erreur : " . $e->getMessage();
+// }
