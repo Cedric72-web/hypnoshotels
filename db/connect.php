@@ -11,5 +11,5 @@ try{
     echo "Connexion réussie";
 }
 catch(PDOException $e){
-    echo "Erreur : " . $e.getMessage();
+    echo "Erreur : " . $e->getMessage();
 }
