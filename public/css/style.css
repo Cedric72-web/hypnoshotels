@@ -1,0 +1,345 @@
+/* R E S E T   C S S */
+
+*, ::before, ::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* R E S P O N S I V E - M O B I L E F I R S T */
+
+/* **************** Général **************** */
+
+header{
+    width: 100%;
+    height: 60px;
+    background-color: #da38a0;
+    position: fixed;
+    z-index: 1;
+}
+
+h1{
+    line-height: 60px;
+    text-align: center;
+    font-family: 'Yeseva One';
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+h2{
+    padding-top: 15px;
+    margin: 10px auto;
+    text-transform: uppercase;
+    font-family: 'Montserrat Alternates';
+    text-align: center;
+}
+
+/* **************** Bouton rond menu **************** */
+
+.btn-rond-menu{
+    width: 70px;
+    height: 70px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #ed3572;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.cont-ligne{
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ligne-unique{
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ligne-unique::before{
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    background: #fff;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+}
+
+.ligne-unique::after{
+    content: '';
+    position: absolute;
+    top: 10px;
+    background: #fff;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+}
+
+.cont-ligne.active .ligne-unique::after {
+    top: 0;
+    transform: rotate(45deg);
+    transition: top 300ms ease, transform 300ms 300ms ease;
+}
+
+.cont-ligne.active .ligne-unique::before {
+    bottom: 0;
+    transform: rotate(-45deg);
+    transition: bottom 300ms ease, transform 300ms 300ms ease;
+}
+
+.cont-ligne.active .ligne-unique{
+    background: transparent;
+}
+
+.navbar{
+    display: none;
+}
+
+.navbar.visible{
+    position: absolute;
+    width: 55vw;
+    height: 35vh;
+    background-color: #da38a0;
+    color: #f1f1f1;
+    border-radius: 0 0 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.navbar.visible .blocs-menu{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+}
+
+.navbar.visible .span{
+    color: #f1f1f1;
+}
+
+.navbar.visible a{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    text-decoration: none;
+}
+/* **************** Section Accueil **************** */
+
+#accueil{
+    width: 100vw;
+    padding-top: 60px;
+}
+
+#accueil img{
+    margin-top: 10px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.image-accueil{
+    display: flex;
+    justify-content: center;
+}
+
+.description{
+    margin: 10px;
+    border-radius: 10px;
+    font-family: 'Montserrat Alternates';
+    font-weight: bold;
+    background-image: linear-gradient(to right, #ec48ca, #dc45bc, #cc42ae, #bc3ea0, #ac3b93);
+    padding: 20px;
+    text-align: center;
+    color: #1c1f2a;
+}
+
+/* **************** Section Hotels **************** */
+
+#hotels{
+    width: 100vw;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.image-hotel-card{
+    box-shadow: 2px 2px 4px 1px #da38a0;
+    border: 1px solid #333;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.image-hotel{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    position: absolute;
+}
+
+.image-hotel-card img{
+    height: auto;
+    border-radius: 0 0 20px 20px;
+    width: 90vw;
+    margin-top: 10px;
+    margin-bottom: -15px;
+}
+
+.localisation{
+    align-items: center;
+    margin-bottom: 15px;
+    display: block;
+    text-align: center;
+    padding: 0 15px;
+    z-index: 0;
+    font-family: 'Yeseva One';
+    text-transform: uppercase;
+    color: #1c1f2a;
+    font-size: 1.1rem;
+    background-color: #b63a8b;
+    border-radius: 5px 5px 0 0;
+}
+
+.localisation p{
+    align-items: center;
+}
+
+/* **************** Section Services **************** */
+
+/* **************** Section Contact **************** */
+
+/* **************** Footer **************** */
+
+.footer{
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat Alternates';
+    background: linear-gradient(45deg, rgba(205,61,182,1) 0%, rgba(233,87,226,1) 35%, rgba(225,102,231,1) 100%);
+    color: #1c1f2a;
+    font-weight: bold;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #1c1f2a;
+}
+
+/* R E S P O N S I V E - T A B L E T T E */
+
+@media screen and (min-width: 500px){
+    h1{
+        font-size: 2rem;
+    }
+
+    .description{
+        width: 90vw;
+        margin-top: 50px;
+    }
+
+    .image-accueil{
+        width: 95vw;
+        height: auto;
+    }
+
+    .image-accueil img{
+        width: 95%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    #accueil .description{
+        position: static;
+        width: 95vw;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+/* R E S P O N S I V E - D E S K T O P */
+
+@media screen and (min-width: 800px) {
+    .btn-rond-menu{
+        display: none;
+    }
+
+
+    .navbar{
+        width: 100vw;
+        height: 60px;
+        background-color: #da38a0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .bloc-menu{
+        width: 100%;
+    }
+    
+    .bloc-menu span{
+        text-align: center;
+        position: relative;
+    }
+    
+    .navbar span a{
+        color: #fff;
+        justify-content: space-around;
+        text-decoration: none;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        font-family: 'Montserrat Alternates';
+    }
+
+    .navbar span a:hover{
+        color: #77c593;
+    }
+
+    .bloc-menu span::after{
+        content: '';
+        display: block;
+        width: 0;
+        margin: 5px auto 0 auto;
+        height: 2px;
+        border-radius: 2px;
+        color: black;
+        transition: all 0.2s ease-out;
+    }
+
+    .navbar span a:hover::after{
+        width: 100%;
+    }
+
+    #accueil{
+        padding-top: 150px;
+        width: 100vw;
+    }
+
+    #accueil .description{
+        width: 95vw;
+        margin: auto;
+        text-align: center;
+    }
+
+    img{
+        width: 30vw;
+    }
+}
