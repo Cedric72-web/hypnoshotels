@@ -23,7 +23,7 @@ if(!empty($_POST)){
         require_once './connect.php';
     
         $addUser = "INSERT INTO users (Nom, Mail, Pass) 
-                    VALUES (':name', ':mail', ':pass')";
+                    VALUES (:name, :mail, :pass)";
 
         $requete = $conn->prepare($addUser);
 
