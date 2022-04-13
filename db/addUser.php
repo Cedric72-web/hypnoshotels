@@ -23,12 +23,13 @@ if(!empty($_POST)){
         require_once './connect.php';
     
         $addUser = "INSERT INTO users (Nom, Mail, Pass) 
-                    VALUES (:name, :mail, $pass)";
+                    VALUES (:name, :mail, :pass)";
 
         $requete = $conn->prepare($addUser);
 
         $requete->bindValue(":name", $firstname, PDO::PARAM_STR);
         $requete->bindValue(":mail", $email, PDO::PARAM_STR);
+        $requete->bindValue(":pass", $pass, PDO::PARAM_STR);
 
         if(!$requete->execute()){
             die("Une erreur est survenue");
