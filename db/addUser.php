@@ -14,7 +14,7 @@ if(!empty($_POST)){
 
         // On vérifie que l'email est bien un email
         if(!filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)){
-            die("L'adresse email est incorecte");
+            die("L'adresse email est incorrecte");
         }
 
         // Cryptage (hashage) du mot de passe
@@ -23,12 +23,12 @@ if(!empty($_POST)){
         require_once './connect.php';
     
         $addUser = "INSERT INTO users (Nom, Mail, Pass) 
-                    VALUES (:name, :mail, :pass)";
+                    VALUES (':name', ':mail', ':pass')";
 
         $requete = $conn->prepare($addUser);
 
         $requete->bindValue(":name", $firstname, PDO::PARAM_STR);
-        $requete->bindValue(":mail", $email, PDO::PARAM_STR);
+        $requete->bindValue(":mail", $_POST["mail"], PDO::PARAM_STR);
         $requete->bindValue(":pass", $pass, PDO::PARAM_STR);
 
         die("Utilisateur créé.");
