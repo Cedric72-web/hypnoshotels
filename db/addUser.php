@@ -23,7 +23,7 @@ if(!empty($_POST)){
         require_once './connect.php';
     
         $addUser = "INSERT INTO users (Nom, Mail, Pass) 
-                    VALUES (:name, :mail, $pass)";
+                    VALUES (:name, :mail, '$pass')";
 
         $requete = $conn->prepare($addUser);
 
@@ -32,7 +32,7 @@ if(!empty($_POST)){
 
         $requete->execute();
 
-        die("Utilisateur créé.");
+        echo("Utilisateur créé.");
 
         if(!$requete->execute()){
             die("Une erreur est survenue");
