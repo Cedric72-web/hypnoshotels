@@ -31,6 +31,8 @@ if(!empty($_POST)){
         $requete->bindValue(":mail", $email, PDO::PARAM_STR);
         $requete->bindValue(":pass", $pass, PDO::PARAM_STR);
 
+        die("Utilisateur créé.");
+
         if(!$requete->execute()){
             die("Une erreur est survenue");
         }
