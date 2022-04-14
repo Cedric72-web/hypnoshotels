@@ -8,7 +8,7 @@
     <nav class="navbar">
         <div class="blocs-menu">
             <span class="nav-menu-item">
-                <a href="#accueil">
+                <a href="../index.php">
                     Accueil
                 </a>
             </span>

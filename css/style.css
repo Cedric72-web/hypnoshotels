@@ -6,6 +6,11 @@
     margin: 0;
 }
 
+body{
+    position: relative;
+    min-height: 100%;
+}
+
 
 /* R E S P O N S I V E - M O B I L E F I R S T */
 
@@ -33,6 +38,29 @@ h2{
     text-transform: uppercase;
     font-family: 'Montserrat Alternates';
     text-align: center;
+}
+
+form{
+    background: linear-gradient(45deg, rgba(205,61,182,1) 0%, rgba(233,87,226,1) 35%, rgba(225,102,231,1) 100%);
+    border-radius: 20px;
+    width: 80vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-in-form{
+    position: absolute;
+    margin-top: 25vh;
+    margin-left: 10vw;
+    font-size: 1.2rem;
+    font-family: 'Montserrat Alternates';
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 /* **************** Bouton rond menu **************** */
@@ -227,6 +255,8 @@ h2{
 /* **************** Footer **************** */
 
 .footer{
+    position: absolute;
+    bottom: 0;
     width: 100vw;
     height: 50px;
     display: flex;
