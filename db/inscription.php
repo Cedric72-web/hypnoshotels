@@ -8,17 +8,17 @@ include_once '../includes/navbar.php';
     <h1>Inscription</h1>
     <div class="sign-in-form-items">
         <label for="firstname" class="sign-in-form-label">Prénom :</label><br>
-        <input id="firstname" name="firstname" type="text">
+        <input class="sign-in-form-input id="firstname" name="firstname" type="text">
     </div>
     <div class="sign-in-form-items">
         <label for="mail" class="sign-in-form-label">Email :</label><br>
-        <input id="mail" name="mail" type="email">
+        <input class="sign-in-form-input id="mail" name="mail" type="email">
     </div>
     <div class="sign-in-form-items">
         <label for="password" class="sign-in-form-label">Mot de passe :</label><br>
-        <input id="password" name="password" type="password">
+        <input class="sign-in-form-input id="password" name="password" type="password">
     </div>
-    <button type="submit" >S'inscrire</button>
+    <button class="sign-in-button" type="submit" >S'inscrire</button>
 </form>
 
 <?php

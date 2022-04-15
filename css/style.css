@@ -40,7 +40,10 @@ h2{
     text-align: center;
 }
 
+/* **************** Page inscription **************** */
+
 form{
+    border:1px solid black;
     background: linear-gradient(45deg, rgba(205,61,182,1) 0%, rgba(233,87,226,1) 35%, rgba(225,102,231,1) 100%);
     border-radius: 20px;
     width: 80vw;
@@ -52,7 +55,7 @@ form{
 
 .sign-in-form{
     position: absolute;
-    margin-top: 25vh;
+    margin-top: 15vh;
     margin-left: 10vw;
     font-size: 1.2rem;
     font-family: 'Montserrat Alternates';
@@ -61,6 +64,33 @@ form{
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.sign-in-form input{
+    text-align: center;
+    width: 70vw;
+    border-radius: 15px;
+    line-height: 1.5rem;
+    padding-left: 10px;
+    font-size: 1.1rem;
+    color: #ca114e;
+}
+
+.sign-in-button{
+    padding: 10px 25px;
+    cursor: pointer;
+    font-family: 'Montserrat Alternates';
+    font-size: 1.3rem;
+    background-color: #f1f1f1;
+    border: 1px solid #da0c50;
+    color: #ca114e;
+    border-radius: 10px;
+}
+
+.sign-in-button:hover{
+    border: 1px solid #f1f1f1;
+    background-color: #da0c50;
+    color: #f1f1f1;
 }
 
 /* **************** Bouton rond menu **************** */
@@ -255,6 +285,8 @@ form{
 /* **************** Footer **************** */
 
 .footer{
+    border: 2px solid black;
+    z-index: 1000;
     position: absolute;
     bottom: 0;
     width: 100vw;
