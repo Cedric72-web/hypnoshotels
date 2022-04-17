@@ -36,7 +36,7 @@
         </div>
         <div class="blocs-menu">
             <span class="nav-menu-item">
-                <a href="../db/inscription.php">
+                <a href="../db/connexion.php">
                     Connexion
                 </a>
             </span>

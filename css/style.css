@@ -93,6 +93,15 @@ form{
     color: #f1f1f1;
 }
 
+form a{
+    display: block;
+    position: relative;
+    font-size: 0.8rem;
+    float: right;
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
 /* **************** Bouton rond menu **************** */
 
 .btn-rond-menu{
